@@ -97,8 +97,13 @@ def update_readme():
     
     # Atualiza o README.md
     with open("README.md", "w", encoding="utf-8") as f:
-        f.write("# Estatísticas do Repositório\n")
+        f.write(f'<p align="center">\n')
+        f.write(f'   <img src="https://raw.githubusercontent.com/ctm-granderecife/cdn-imgs/refs/heads/main/commons/logo_grande_recife.svg" alt="Logo do projeto" width="600">\n')
+        f.write(f'</p>\n')
         
+        
+        f.write("# Dados estatisticos de Desenvolvimento do Grande Recife \n")
+
         # Informações dos commits
         f.write(f"\n## Top 10 Usuários da Última Semana\n")
         for user, commits in top_10_users:
