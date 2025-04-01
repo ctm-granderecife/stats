@@ -1,0 +1,46 @@
+name: Update README with GitHub Stats
+
+on:
+  schedule:
+    - cron: "0 0 * * 1" # Executa toda segunda-feira às 00:00 (UTC)
+  push:
+    branches:
+      - main # Executa quando há push no branch principal
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Passo 1: Check out o código
+      - name: Check out repository
+        uses: actions/checkout@v2
+
+      # Passo 2: Configurar o Python
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+
+      # Passo 3: Instalar dependências (requests e dotenv)
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests python-dotenv
+
+      # Passo 4: Adicionar o arquivo .env com o token (secret no GitHub)
+      - name: Set up .env with GitHub Token
+        run: echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> .env
+
+      # Passo 5: Executar o script Python para atualizar o README
+      - name: Run script to update README
+        run: python update_readme.py
+
+      # Passo 6: Commit e push das alterações no README
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add README.md
+          git commit -m "Atualizar README com dados de commits"
+          git push
