@@ -1,4 +1,4 @@
-name: Update README with GitHub Stats
+name: Update GitHub Stats
 
 on:
   schedule:
@@ -8,7 +8,7 @@ on:
       - main # Executa quando há push no branch principal
 
 jobs:
-  update-readme:
+  update-stats:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,15 +32,15 @@ jobs:
       - name: Set up .env with GitHub Token
         run: echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> .env
 
-      # Passo 5: Executar o script Python para atualizar o README
-      - name: Run script to update README
-        run: python update_readme.py
+      # Passo 5: Executar o script Python para atualizar as estatísticas
+      - name: Run script to update stats
+        run: python update_stats.py
 
-      # Passo 6: Commit e push das alterações no README
+      # Passo 6: Commit e push das alterações
       - name: Commit and push changes
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add README.md
-          git commit -m "Atualizar README com dados de commits" || echo "Nada para commitar"
+          git add index.html
+          git commit -m "Atualizar estatísticas" || echo "Nada para commitar"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ctm-granderecife/stats.git HEAD:main
