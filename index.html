@@ -88,6 +88,20 @@
             color: #666;
             margin-top: 10px;
         }
+        .loading {
+            text-align: center;
+            padding: 20px;
+            font-size: 18px;
+            color: #666;
+        }
+        .error {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 5px solid #c62828;
+        }
     </style>
 </head>
 <body>
@@ -97,17 +111,134 @@
 
     <h1>Dados Estatísticos de Desenvolvimento do Grande Recife</h1>
     
-    <div class="last-updated">Última atualização: 07/05/2025 14:23:26</div>
-
-    <div class="stats-container">
+    <div id="last-updated" class="stats-container" style="text-align: right; font-size: 12px; color: #666; padding: 10px;">
+        Carregando...
+    </div>
+    
+    <div id="top-users" class="stats-container">
         <h2>Top 10 Usuários da Última Semana</h2>
-        <ul class="user-list">
+        <div class="loading">Carregando dados...</div>
+        <ul class="user-list" style="display: none;">
 
         </ul>
     </div>
-
-    <div class="footer">
-        <p>© Grande Recife - CTM</p>
+    
+    <div id="repositories-container">
+        <div class="loading">Carregando repositórios...</div>
     </div>
+    
+    <div class="footer">
+        <p> Grande Recife - CTM</p>
+    </div>
+    
+    <script>
+        // Função para formatar a data
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('pt-BR', { 
+                day: '2-digit', 
+                month: '2-digit', 
+                year: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+        }
+        
+        // Função para carregar os dados do JSON
+        async function loadData() {
+            try {
+                const response = await fetch('stats_data.json');
+                if (!response.ok) {
+                    throw new Error('Falha ao carregar os dados');
+                }
+                const data = await response.json();
+                renderData(data);
+            } catch (error) {
+                console.error('Erro ao carregar dados:', error);
+                document.getElementById('repositories-container').innerHTML = `
+                    <div class="error">
+                        <strong>Erro ao carregar dados:</strong> ${error.message}
+                    </div>
+                `;
+            }
+        }
+        
+        // Função para renderizar os dados na página
+        function renderData(data) {
+            // Atualizar a data de última atualização
+            const lastUpdatedElement = document.getElementById('last-updated');
+            lastUpdatedElement.innerHTML = `Última atualização: ${formatDate(data.last_updated)}`;
+            
+            // Renderizar os top usuários
+            const topUsersElement = document.getElementById('top-users');
+            const userListElement = topUsersElement.querySelector('.user-list');
+            const loadingElement = topUsersElement.querySelector('.loading');
+            
+            if (data.top_users && data.top_users.length > 0) {
+                loadingElement.style.display = 'none';
+                userListElement.style.display = 'block';
+                
+                userListElement.innerHTML = data.top_users.map(user => 
+                    `<li>${user.name}: ${user.commits} commits</li>`
+                ).join('');
+            } else {
+                loadingElement.textContent = 'Nenhum dado de usuário encontrado.';
+            }
+            
+            // Renderizar os repositórios
+            const repositoriesContainer = document.getElementById('repositories-container');
+            
+            if (data.repositories && Object.keys(data.repositories).length > 0) {
+                repositoriesContainer.innerHTML = '';
+                
+                // Ordenar repositórios por total de linhas (decrescente)
+                const sortedRepos = Object.entries(data.repositories)
+                    .sort((a, b) => b[1].total_lines - a[1].total_lines);
+                
+                sortedRepos.forEach(([repoName, repoData]) => {
+                    const repoElement = document.createElement('div');
+                    repoElement.className = 'stats-container';
+                    
+                    repoElement.innerHTML = `
+                        <h3>${repoName}</h3>
+                        <div class="repo-stats">
+                            <p><strong>Total de Linhas Alteradas</strong>: ${repoData.total_lines} (Adições: ${repoData.total_additions} | Deleções: ${repoData.total_deletions})</p>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>SHA</th>
+                                    <th>Autor</th>
+                                    <th>Data</th>
+                                    <th>Adições</th>
+                                    <th>Deleções</th>
+                                    <th>Total de Linhas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${repoData.commits.map(commit => `
+                                    <tr>
+                                        <td>${commit.sha}</td>
+                                        <td>${commit.author}</td>
+                                        <td>${new Date(commit.date).toLocaleDateString('pt-BR')}</td>
+                                        <td>${commit.additions}</td>
+                                        <td>${commit.deletions}</td>
+                                        <td>${commit.total_lines}</td>
+                                    </tr>
+                                `).join('')}
+                            </tbody>
+                        </table>
+                    `;
+                    
+                    repositoriesContainer.appendChild(repoElement);
+                });
+            } else {
+                repositoriesContainer.innerHTML = '<div class="error">Nenhum dado de repositório encontrado.</div>';
+            }
+        }
+        
+        // Carregar os dados quando a página for carregada
+        document.addEventListener('DOMContentLoaded', loadData);
+    </script>
 </body>
 </html>
