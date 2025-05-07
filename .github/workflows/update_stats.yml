@@ -6,6 +6,7 @@ on:
   push:
     branches:
       - main # Executa quando há push no branch principal
+  workflow_dispatch:
 
 # Definir permissões para o token GITHUB_TOKEN
 permissions:
