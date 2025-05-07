@@ -1,50 +1,5 @@
 {
-  "top_users": [
-    {"name": "Luan Araújo", "commits": 18},
-    {"name": "peregrinno", "commits": 17},
-    {"name": "Grande Recife - CTM", "commits": 6},
-    {"name": "felipeserpa01", "commits": 5},
-    {"name": "rafaeldlcs", "commits": 5},
-    {"name": "danilodct", "commits": 4},
-    {"name": "Danilo Torres", "commits": 4},
-    {"name": "Adelson", "commits": 4},
-    {"name": "NataliaBento", "commits": 2}
-  ],
-  "repositories": {
-    "sim-ui": {
-      "commits": [
-        {"sha": "a4d4725", "author": "Luan Araújo", "date": "2025-04-01T17:38:51Z", "additions": 2718, "deletions": 2757, "total_lines": 5475},
-        {"sha": "5dbeead", "author": "Luan Araújo", "date": "2025-04-01T17:38:20Z", "additions": 2718, "deletions": 2757, "total_lines": 5475},
-        {"sha": "c7cb2b1", "author": "Luan Araújo", "date": "2025-04-01T17:37:41Z", "additions": 2718, "deletions": 2757, "total_lines": 5475},
-        {"sha": "62e5113", "author": "peregrinno", "date": "2025-04-01T17:36:17Z", "additions": 9, "deletions": 473, "total_lines": 482},
-        {"sha": "a495fa8", "author": "peregrinno", "date": "2025-04-01T17:33:03Z", "additions": 54, "deletions": 7, "total_lines": 61}
-      ],
-      "total_additions": 8217,
-      "total_deletions": 8751,
-      "total_lines": 16968
-    },
-    "vem-diag": {
-      "commits": [
-        {"sha": "0d6f7bc", "author": "peregrinno", "date": "2025-04-01T13:02:10Z", "additions": 73, "deletions": 99, "total_lines": 172},
-        {"sha": "61626d5", "author": "peregrinno", "date": "2025-04-01T12:58:13Z", "additions": 4, "deletions": 1, "total_lines": 5},
-        {"sha": "03305c1", "author": "peregrinno", "date": "2025-04-01T12:55:48Z", "additions": 29318, "deletions": 0, "total_lines": 29318}
-      ],
-      "total_additions": 29395,
-      "total_deletions": 100,
-      "total_lines": 29495
-    },
-    "itinerarios": {
-      "commits": [
-        {"sha": "2c6114e", "author": "felipeserpa01", "date": "2025-03-26T16:34:18Z", "additions": 10, "deletions": 7, "total_lines": 17},
-        {"sha": "a44bbcf", "author": "felipeserpa01", "date": "2025-03-26T16:12:28Z", "additions": 2465, "deletions": 2417, "total_lines": 4882},
-        {"sha": "70b4c11", "author": "felipeserpa01", "date": "2025-03-19T19:36:14Z", "additions": 30787, "deletions": 65, "total_lines": 30852},
-        {"sha": "d0d4942", "author": "felipeserpa01", "date": "2025-02-03T18:04:48Z", "additions": 545, "deletions": 255, "total_lines": 800},
-        {"sha": "6b3e5e2", "author": "felipeserpa01", "date": "2025-01-08T18:01:45Z", "additions": 914, "deletions": 15, "total_lines": 929}
-      ],
-      "total_additions": 34721,
-      "total_deletions": 2759,
-      "total_lines": 37480
-    }
-  },
-  "last_updated": "2025-05-07T11:31:01-03:00"
+  "top_users": [],
+  "repositories": {},
+  "last_updated": "2025-05-07T14:39:06.956914"
 }
