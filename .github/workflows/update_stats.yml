@@ -33,8 +33,11 @@ jobs:
           pip install requests python-dotenv
 
       # Passo 4: Adicionar o arquivo .env com o token (secret no GitHub)
+      # Usamos REPO_TOKEN que deve ser configurado como um PAT com permissões para ler todos os repositórios
       - name: Set up .env with GitHub Token
-        run: echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" >> .env
+        run: echo "GITHUB_TOKEN=${{ secrets.REPO_TOKEN }}" >> .env
+        env:
+          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
 
       # Passo 5: Executar o script Python para atualizar as estatísticas
       - name: Run script to update stats
@@ -45,6 +48,8 @@ jobs:
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git add index.html
+          git add index.html stats_data.json
           git commit -m "Atualizar estatísticas" || echo "Nada para commitar"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/ctm-granderecife/stats.git HEAD:main
+          git push https://x-access-token:${{ secrets.REPO_TOKEN }}@github.com/ctm-granderecife/stats.git HEAD:main
+        env:
+          REPO_TOKEN: ${{ secrets.REPO_TOKEN }}
