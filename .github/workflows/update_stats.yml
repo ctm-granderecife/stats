@@ -32,7 +32,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests python-dotenv
 
-      # Passo 4: Adicionar o arquivo .env com o token (secret no GitHub)
+      # Passo 4: Adicionar o token do GitHub como variável de ambiente
       # Usamos REPO_TOKEN que deve ser configurado como um PAT com permissões para ler todos os repositórios
       - name: Set up .env with GitHub Token
         run: echo "GITHUB_TOKEN=${{ secrets.REPO_TOKEN }}" >> .env
@@ -42,6 +42,8 @@ jobs:
       # Passo 5: Executar o script Python para atualizar as estatísticas
       - name: Run script to update stats
         run: python update_stats.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.REPO_TOKEN }}
 
       # Passo 6: Commit e push das alterações
       - name: Commit and push changes

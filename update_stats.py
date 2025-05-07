@@ -33,23 +33,90 @@ REPOS_BLACKLIST = [
 # Função para pegar os repositórios da organização
 def get_repos():
     repos_url = f"https://api.github.com/orgs/{ORG_NAME}/repos?page=1&per_page=20&sort=updated&direction=desc"
-    response = requests.get(repos_url, headers=HEADERS)
-    response.raise_for_status()
-    return [repo['name'] for repo in response.json()]
+    print(f"Requisitando repositórios: {repos_url}")
+    print(f"Headers: {HEADERS}")
+    
+    try:
+        response = requests.get(repos_url, headers=HEADERS)
+        response.raise_for_status()
+        repos = response.json()
+        print(f"Resposta: {response.status_code} - Encontrados {len(repos)} repositórios")
+        return [repo['name'] for repo in repos]
+    except Exception as e:
+        print(f"Erro ao obter repositórios: {str(e)}")
+        print(f"Resposta: {response.text if 'response' in locals() else 'N/A'}")
+        return []
 
 # Função para pegar commits de um repositório
 def get_commits(repo):
     commits_url = f"https://api.github.com/repos/{ORG_NAME}/{repo}/commits?per_page=5"  # Limitar aos 5 commits mais recentes
-    response = requests.get(commits_url, headers=HEADERS)
-    response.raise_for_status()
-    return response.json()
+    print(f"Requisitando commits para {repo}: {commits_url}")
+    
+    try:
+        response = requests.get(commits_url, headers=HEADERS)
+        response.raise_for_status()
+        commits = response.json()
+        print(f"Resposta: {response.status_code} - Encontrados {len(commits)} commits para {repo}")
+        return commits
+    except Exception as e:
+        print(f"Erro ao obter commits para {repo}: {str(e)}")
+        print(f"Resposta: {response.text if 'response' in locals() else 'N/A'}")
+        return []
 
 # Função para pegar as estatísticas de um commit
 def get_commit_stats(repo, sha):
     commit_url = f"https://api.github.com/repos/{ORG_NAME}/{repo}/commits/{sha}"
-    response = requests.get(commit_url, headers=HEADERS)
-    response.raise_for_status()
-    return response.json()
+    print(f"Requisitando estatísticas para commit {sha[:7]} do repo {repo}: {commit_url}")
+    
+    try:
+        response = requests.get(commit_url, headers=HEADERS)
+        response.raise_for_status()
+        commit_data = response.json()
+        print(f"Resposta: {response.status_code} - Obtidas estatísticas para commit {sha[:7]}")
+        
+        # Extrair informações relevantes
+        try:
+            author = commit_data['commit']['author']['name']
+        except:
+            author = "Unknown"
+            print(f"Erro ao obter autor para commit {sha[:7]}")
+            
+        try:
+            date = commit_data['commit']['author']['date']
+        except:
+            date = "Unknown"
+            print(f"Erro ao obter data para commit {sha[:7]}")
+        
+        # Obter estatísticas de adições e deleções
+        try:
+            additions = commit_data['stats']['additions']
+            deletions = commit_data['stats']['deletions']
+            total_lines = additions + deletions
+        except:
+            additions = 0
+            deletions = 0
+            total_lines = 0
+            print(f"Erro ao obter estatísticas para commit {sha[:7]}")
+        
+        return {
+            'sha': sha[:7],  # Apenas os primeiros 7 caracteres do SHA
+            'author': author,
+            'date': date,
+            'additions': additions,
+            'deletions': deletions,
+            'total_lines': total_lines
+        }
+    except Exception as e:
+        print(f"Erro ao obter estatísticas para commit {sha[:7]}: {str(e)}")
+        print(f"Resposta: {response.text if 'response' in locals() else 'N/A'}")
+        return {
+            'sha': sha[:7],
+            'author': 'Unknown',
+            'date': datetime.now().isoformat(),
+            'additions': 0,
+            'deletions': 0,
+            'total_lines': 0
+        }
 
 # Função para gerar dados de exemplo quando não há token disponível
 def get_sample_data():
@@ -139,10 +206,10 @@ def collect_stats_data():
                         sha = commit['sha']
                         author = commit['commit']['author']['name']
                         date = commit['commit']['author']['date']
-                        stats = get_commit_stats(repo, sha)['stats']
-                        additions = stats['additions']
-                        deletions = stats['deletions']
-                        total_lines += stats['total']
+                        commit_stats = get_commit_stats(repo, sha)
+                        additions = commit_stats['additions']
+                        deletions = commit_stats['deletions']
+                        total_lines += commit_stats['total_lines']
                         
                         # Coleta os dados
                         commit_authors[author] += 1
@@ -152,7 +219,7 @@ def collect_stats_data():
                             'date': date,
                             'additions': additions,
                             'deletions': deletions,
-                            'total_lines': stats['total']
+                            'total_lines': commit_stats['total_lines']
                         })
                         total_additions += additions
                         total_deletions += deletions
