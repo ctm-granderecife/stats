@@ -3,7 +3,7 @@ import json
 import requests
 from dotenv import load_dotenv
 from collections import Counter
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 import sys
 
 # Carregar variáveis do .env
@@ -33,59 +33,48 @@ REPOS_BLACKLIST = [
 # Função para pegar os repositórios da organização
 def get_repos():
     repos_url = f"https://api.github.com/orgs/{ORG_NAME}/repos?page=1&per_page=20&sort=updated&direction=desc"
-    print(f"Requisitando repositórios: {repos_url}")
-    print(f"Headers: {HEADERS}")
     
     try:
         response = requests.get(repos_url, headers=HEADERS)
         response.raise_for_status()
         repos = response.json()
-        print(f"Resposta: {response.status_code} - Encontrados {len(repos)} repositórios")
         return [repo['name'] for repo in repos]
     except Exception as e:
         print(f"Erro ao obter repositórios: {str(e)}")
-        print(f"Resposta: {response.text if 'response' in locals() else 'N/A'}")
         return []
 
 # Função para pegar commits de um repositório
 def get_commits(repo):
     commits_url = f"https://api.github.com/repos/{ORG_NAME}/{repo}/commits?per_page=5"  # Limitar aos 5 commits mais recentes
-    print(f"Requisitando commits para {repo}: {commits_url}")
     
     try:
         response = requests.get(commits_url, headers=HEADERS)
         response.raise_for_status()
         commits = response.json()
-        print(f"Resposta: {response.status_code} - Encontrados {len(commits)} commits para {repo}")
         return commits
     except Exception as e:
         print(f"Erro ao obter commits para {repo}: {str(e)}")
-        print(f"Resposta: {response.text if 'response' in locals() else 'N/A'}")
         return []
 
 # Função para pegar as estatísticas de um commit
 def get_commit_stats(repo, sha):
     commit_url = f"https://api.github.com/repos/{ORG_NAME}/{repo}/commits/{sha}"
-    print(f"Requisitando estatísticas para commit {sha[:7]} do repo {repo}: {commit_url}")
     
     try:
         response = requests.get(commit_url, headers=HEADERS)
         response.raise_for_status()
         commit_data = response.json()
-        print(f"Resposta: {response.status_code} - Obtidas estatísticas para commit {sha[:7]}")
         
         # Extrair informações relevantes
         try:
             author = commit_data['commit']['author']['name']
         except:
             author = "Unknown"
-            print(f"Erro ao obter autor para commit {sha[:7]}")
             
         try:
             date = commit_data['commit']['author']['date']
         except:
             date = "Unknown"
-            print(f"Erro ao obter data para commit {sha[:7]}")
         
         # Obter estatísticas de adições e deleções
         try:
@@ -96,7 +85,6 @@ def get_commit_stats(repo, sha):
             additions = 0
             deletions = 0
             total_lines = 0
-            print(f"Erro ao obter estatísticas para commit {sha[:7]}")
         
         return {
             'sha': sha[:7],  # Apenas os primeiros 7 caracteres do SHA
@@ -108,11 +96,14 @@ def get_commit_stats(repo, sha):
         }
     except Exception as e:
         print(f"Erro ao obter estatísticas para commit {sha[:7]}: {str(e)}")
-        print(f"Resposta: {response.text if 'response' in locals() else 'N/A'}")
+        # Configura o fuso horário para UTC-3 (Brasília)
+        fuso_horario_brasil = timezone(timedelta(hours=-3))
+        data_hora_brasil = datetime.now(fuso_horario_brasil)
+        
         return {
             'sha': sha[:7],
             'author': 'Unknown',
-            'date': datetime.now().isoformat(),
+            'date': data_hora_brasil.isoformat(),
             'additions': 0,
             'deletions': 0,
             'total_lines': 0
@@ -171,10 +162,14 @@ def get_sample_data():
         }
     }
     
+    # Configura o fuso horário para UTC-3 (Brasília)
+    fuso_horario_brasil = timezone(timedelta(hours=-3))
+    data_hora_brasil = datetime.now(fuso_horario_brasil)
+    
     return {
         'top_users': top_users,
         'repositories': repositories,
-        'last_updated': datetime.now().isoformat()
+        'last_updated': data_hora_brasil.isoformat()
     }
 
 # Função para coletar os dados estatísticos
@@ -244,10 +239,14 @@ def collect_stats_data():
         stats_data = get_sample_data()
     else:
         # Prepara os dados para salvar em JSON
+        # Configura o fuso horário para UTC-3 (Brasília)
+        fuso_horario_brasil = timezone(timedelta(hours=-3))
+        data_hora_brasil = datetime.now(fuso_horario_brasil)
+        
         stats_data = {
             'top_users': [{'name': user, 'commits': commits} for user, commits in top_10_users],
             'repositories': repo_data,
-            'last_updated': datetime.now().isoformat()
+            'last_updated': data_hora_brasil.isoformat()
         }
     
     # Salva os dados em um arquivo JSON
