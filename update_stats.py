@@ -113,8 +113,7 @@ def get_commit_stats(repo, sha):
 def get_sample_data():
     # Dados de exemplo para top usuários
     top_users = [
-        {'name': 'Luan Araújo', 'commits': 18},
-        {'name': 'peregrinno', 'commits': 17},
+        {'name': 'Luan Araújo', 'commits': 10},
         {'name': 'Grande Recife - CTM', 'commits': 6},
         {'name': 'felipeserpa01', 'commits': 5},
         {'name': 'rafaeldlcs', 'commits': 5},
@@ -131,8 +130,6 @@ def get_sample_data():
                 {'sha': 'a4d4725', 'author': 'Luan Araújo', 'date': '2025-04-01T17:38:51Z', 'additions': 2718, 'deletions': 2757, 'total_lines': 5475},
                 {'sha': '5dbeead', 'author': 'Luan Araújo', 'date': '2025-04-01T17:38:20Z', 'additions': 2718, 'deletions': 2757, 'total_lines': 5475},
                 {'sha': 'c7cb2b1', 'author': 'Luan Araújo', 'date': '2025-04-01T17:37:41Z', 'additions': 2718, 'deletions': 2757, 'total_lines': 5475},
-                {'sha': '62e5113', 'author': 'peregrinno', 'date': '2025-04-01T17:36:17Z', 'additions': 9, 'deletions': 473, 'total_lines': 482},
-                {'sha': 'a495fa8', 'author': 'peregrinno', 'date': '2025-04-01T17:33:03Z', 'additions': 54, 'deletions': 7, 'total_lines': 61}
             ],
             'total_additions': 8217,
             'total_deletions': 8751,
@@ -200,6 +197,7 @@ def collect_stats_data():
                     for commit in commits:
                         sha = commit['sha']
                         author = commit['commit']['author']['name']
+                        author = merge_users(author)
                         date = commit['commit']['author']['date']
                         commit_stats = get_commit_stats(repo, sha)
                         additions = commit_stats['additions']
@@ -271,6 +269,25 @@ def update_stats():
         print("\nNota: Foram usados dados de exemplo pois o token do GitHub não foi encontrado.")
         print("Para usar dados reais, crie um arquivo .env com seu token do GitHub:")
         print("GITHUB_TOKEN=seu_token_aqui")
+
+# Mescla usuarios com o mesmo nome
+def merge_users(user):
+    commons = {
+        'Luan Araújo': 'Luan Araújo',
+        'Luan Araujo': 'Luan Araújo',
+        'peregrinno': 'Luan Araújo',
+        'felipeserpa01': 'Felipe Serpa',
+        'rafaeldlcs': 'Rafael',
+        'danilodct': 'Danilo Torres',
+        'Danilo Torres': 'Danilo Torres',
+        'Adelson': 'Adelson',
+        'NataliaBento': 'Natalia Bento',
+        '4stunor': 'Julio César',
+        'ThiagoMarianols': 'Thiago Mariano',
+    }
+
+    return commons.get(user, user)
+    
 
 if __name__ == "__main__":
     try:
