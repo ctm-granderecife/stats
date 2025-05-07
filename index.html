@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatísticas do Grande Recife</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .logo {
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            color: #0056b3;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #0056b3;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+            margin-top: 40px;
+        }
+        h3 {
+            color: #0077cc;
+            margin-top: 30px;
+        }
+        .stats-container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .user-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .user-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .repo-stats {
+            margin-bottom: 15px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 14px;
+            color: #666;
+        }
+        .last-updated {
+            text-align: right;
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://raw.githubusercontent.com/ctm-granderecife/cdn-imgs/refs/heads/main/commons/logo_grande_recife.svg" alt="Logo do Grande Recife" class="logo">
+    </header>
+
+    <h1>Dados Estatísticos de Desenvolvimento do Grande Recife</h1>
+    
+    <div class="last-updated">Última atualização: 07/05/2025 10:59:01</div>
+
+    <div class="stats-container">
+        <h2>Top 10 Usuários da Última Semana</h2>
+        <ul class="user-list">
+            <li>Luan Araújo: 18 commits</li>
+            <li>peregrinno: 17 commits</li>
+            <li>Grande Recife - CTM: 6 commits</li>
+            <li>felipeserpa01: 5 commits</li>
+            <li>rafaeldlcs: 5 commits</li>
+            <li>danilodct: 4 commits</li>
+            <li>Danilo Torres: 4 commits</li>
+            <li>Adelson: 4 commits</li>
+            <li>NataliaBento: 2 commits</li>
+
+        </ul>
+    </div>
+
+    <div class="stats-container">
+        <h3>sim-ui</h3>
+        <div class="repo-stats">
+            <p><strong>Total de Linhas Alteradas</strong>: 16968 (Adições: 8217 | Deleções: 8751)</p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>SHA</th>
+                    <th>Autor</th>
+                    <th>Data</th>
+                    <th>Adições</th>
+                    <th>Deleções</th>
+                    <th>Total de Linhas</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>a4d4725</td>
+                    <td>Luan Araújo</td>
+                    <td>2025-04-01T17:38:51Z</td>
+                    <td>2718</td>
+                    <td>2757</td>
+                    <td>5475</td>
+                </tr>
+
+                <tr>
+                    <td>5dbeead</td>
+                    <td>Luan Araújo</td>
+                    <td>2025-04-01T17:38:20Z</td>
+                    <td>2718</td>
+                    <td>2757</td>
+                    <td>5475</td>
+                </tr>
+
+                <tr>
+                    <td>c7cb2b1</td>
+                    <td>Luan Araújo</td>
+                    <td>2025-04-01T17:37:41Z</td>
+                    <td>2718</td>
+                    <td>2757</td>
+                    <td>5475</td>
+                </tr>
+
+                <tr>
+                    <td>62e5113</td>
+                    <td>peregrinno</td>
+                    <td>2025-04-01T17:36:17Z</td>
+                    <td>9</td>
+                    <td>473</td>
+                    <td>482</td>
+                </tr>
+
+                <tr>
+                    <td>a495fa8</td>
+                    <td>peregrinno</td>
+                    <td>2025-04-01T17:33:03Z</td>
+                    <td>54</td>
+                    <td>7</td>
+                    <td>61</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="stats-container">
+        <h3>vem-diag</h3>
+        <div class="repo-stats">
+            <p><strong>Total de Linhas Alteradas</strong>: 29495 (Adições: 29395 | Deleções: 100)</p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>SHA</th>
+                    <th>Autor</th>
+                    <th>Data</th>
+                    <th>Adições</th>
+                    <th>Deleções</th>
+                    <th>Total de Linhas</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>0d6f7bc</td>
+                    <td>peregrinno</td>
+                    <td>2025-04-01T13:02:10Z</td>
+                    <td>73</td>
+                    <td>99</td>
+                    <td>172</td>
+                </tr>
+
+                <tr>
+                    <td>61626d5</td>
+                    <td>peregrinno</td>
+                    <td>2025-04-01T12:58:13Z</td>
+                    <td>4</td>
+                    <td>1</td>
+                    <td>5</td>
+                </tr>
+
+                <tr>
+                    <td>03305c1</td>
+                    <td>peregrinno</td>
+                    <td>2025-04-01T12:55:48Z</td>
+                    <td>29318</td>
+                    <td>0</td>
+                    <td>29318</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="stats-container">
+        <h3>itinerarios</h3>
+        <div class="repo-stats">
+            <p><strong>Total de Linhas Alteradas</strong>: 37480 (Adições: 34721 | Deleções: 2759)</p>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>SHA</th>
+                    <th>Autor</th>
+                    <th>Data</th>
+                    <th>Adições</th>
+                    <th>Deleções</th>
+                    <th>Total de Linhas</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>2c6114e</td>
+                    <td>felipeserpa01</td>
+                    <td>2025-03-26T16:34:18Z</td>
+                    <td>10</td>
+                    <td>7</td>
+                    <td>17</td>
+                </tr>
+
+                <tr>
+                    <td>a44bbcf</td>
+                    <td>felipeserpa01</td>
+                    <td>2025-03-26T16:12:28Z</td>
+                    <td>2465</td>
+                    <td>2417</td>
+                    <td>4882</td>
+                </tr>
+
+                <tr>
+                    <td>70b4c11</td>
+                    <td>felipeserpa01</td>
+                    <td>2025-03-19T19:36:14Z</td>
+                    <td>30787</td>
+                    <td>65</td>
+                    <td>30852</td>
+                </tr>
+
+                <tr>
+                    <td>d0d4942</td>
+                    <td>felipeserpa01</td>
+                    <td>2025-02-03T18:04:48Z</td>
+                    <td>545</td>
+                    <td>255</td>
+                    <td>800</td>
+                </tr>
+
+                <tr>
+                    <td>6b3e5e2</td>
+                    <td>felipeserpa01</td>
+                    <td>2025-01-08T18:01:45Z</td>
+                    <td>914</td>
+                    <td>15</td>
+                    <td>929</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+
+    <div class="footer">
+        <p>© Grande Recife - CTM</p>
+    </div>
+</body>
+</html>
