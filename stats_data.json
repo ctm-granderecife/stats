@@ -2,34 +2,34 @@
   "top_users": [
     {
       "name": "Luan Araújo",
-      "commits": 49
+      "commits": 51
     },
     {
       "name": "Adelson",
-      "commits": 5
-    },
-    {
-      "name": "4stuno",
-      "commits": 4
+      "commits": 8
     },
     {
       "name": "Danilo Torres",
       "commits": 4
     },
     {
-      "name": "Adelson Gomes da Silva Junior",
+      "name": "4stuno",
+      "commits": 3
+    },
+    {
+      "name": "Julio Cesar Roque da Silva",
+      "commits": 2
+    },
+    {
+      "name": "braynerdev",
       "commits": 1
     },
     {
-      "name": "LucasMuniz847",
+      "name": "Grande Recife - CTM",
       "commits": 1
     },
     {
-      "name": "Joao Lucas Pedro Muniz da Silva",
-      "commits": 1
-    },
-    {
-      "name": "Carla Rayanne",
+      "name": "Natalia Bento",
       "commits": 1
     },
     {
@@ -38,106 +38,193 @@
     }
   ],
   "repositories": {
+    "itinerarios": {
+      "commits": [
+        {
+          "sha": "b3bf642",
+          "author": "braynerdev",
+          "date": "2025-06-20T13:29:52Z",
+          "additions": 1179,
+          "deletions": 549,
+          "total_lines": 1728
+        },
+        {
+          "sha": "045c7f7",
+          "author": "Luan Araújo",
+          "date": "2025-05-14T15:46:38Z",
+          "additions": 1,
+          "deletions": 1,
+          "total_lines": 2
+        },
+        {
+          "sha": "b82f929",
+          "author": "Luan Araújo",
+          "date": "2025-04-08T12:12:11Z",
+          "additions": 1,
+          "deletions": 1,
+          "total_lines": 2
+        },
+        {
+          "sha": "93fb8e1",
+          "author": "Luan Araújo",
+          "date": "2025-04-08T11:43:17Z",
+          "additions": 523,
+          "deletions": 20178,
+          "total_lines": 20701
+        },
+        {
+          "sha": "25775a1",
+          "author": "Luan Araújo",
+          "date": "2025-04-08T11:41:24Z",
+          "additions": 437,
+          "deletions": 428,
+          "total_lines": 865
+        }
+      ],
+      "total_additions": 2141,
+      "total_deletions": 21157,
+      "total_lines": 23298
+    },
     "sim-ui": {
       "commits": [
         {
-          "sha": "bb97180",
+          "sha": "15edc59",
+          "author": "Grande Recife - CTM",
+          "date": "2025-06-19T19:59:00Z",
+          "additions": 1118,
+          "deletions": 1050,
+          "total_lines": 2168
+        },
+        {
+          "sha": "37f46b5",
           "author": "4stuno",
-          "date": "2025-05-14T16:28:12Z",
-          "additions": 22,
-          "deletions": 38,
-          "total_lines": 60
+          "date": "2025-06-19T19:56:54Z",
+          "additions": 432,
+          "deletions": 459,
+          "total_lines": 891
         },
         {
-          "sha": "efef6ca",
+          "sha": "0bca921",
+          "author": "Julio Cesar Roque da Silva",
+          "date": "2025-06-19T19:54:53Z",
+          "additions": 1,
+          "deletions": 1,
+          "total_lines": 2
+        },
+        {
+          "sha": "a454273",
+          "author": "Julio Cesar Roque da Silva",
+          "date": "2025-06-19T19:54:21Z",
+          "additions": 431,
+          "deletions": 458,
+          "total_lines": 889
+        },
+        {
+          "sha": "612db58",
           "author": "4stuno",
-          "date": "2025-05-14T16:26:54Z",
-          "additions": 22,
-          "deletions": 38,
-          "total_lines": 60
-        },
-        {
-          "sha": "a2a49be",
-          "author": "4stuno",
-          "date": "2025-05-14T16:24:03Z",
-          "additions": 22,
-          "deletions": 38,
-          "total_lines": 60
-        },
-        {
-          "sha": "b3141a4",
-          "author": "Luan Araújo",
-          "date": "2025-05-08T20:08:19Z",
-          "additions": 441,
-          "deletions": 39,
-          "total_lines": 480
-        },
-        {
-          "sha": "7b2d50e",
-          "author": "Luan Araújo",
-          "date": "2025-05-08T20:08:00Z",
-          "additions": 441,
-          "deletions": 39,
-          "total_lines": 480
+          "date": "2025-06-19T18:42:40Z",
+          "additions": 94,
+          "deletions": 47,
+          "total_lines": 141
         }
       ],
-      "total_additions": 948,
-      "total_deletions": 192,
-      "total_lines": 1140
+      "total_additions": 2076,
+      "total_deletions": 2015,
+      "total_lines": 4091
     },
     "pmv-django": {
       "commits": [
         {
-          "sha": "c5b4bcb",
+          "sha": "73a01e8",
           "author": "Adelson",
-          "date": "2025-06-13T17:41:24Z",
-          "additions": 0,
-          "deletions": 0,
-          "total_lines": 0
+          "date": "2025-06-19T16:31:55Z",
+          "additions": 28,
+          "deletions": 27,
+          "total_lines": 55
         },
         {
-          "sha": "44a53d2",
-          "author": "Adelson Gomes da Silva Junior",
-          "date": "2025-06-13T17:02:55Z",
-          "additions": 2419,
-          "deletions": 0,
-          "total_lines": 2419
+          "sha": "4d4f7f8",
+          "author": "Adelson",
+          "date": "2025-06-18T14:18:33Z",
+          "additions": 17,
+          "deletions": 11,
+          "total_lines": 28
+        },
+        {
+          "sha": "922393a",
+          "author": "Adelson",
+          "date": "2025-06-18T12:39:29Z",
+          "additions": 6,
+          "deletions": 6,
+          "total_lines": 12
+        },
+        {
+          "sha": "d16db5b",
+          "author": "Natalia Bento",
+          "date": "2025-06-17T17:27:44Z",
+          "additions": 48,
+          "deletions": 18,
+          "total_lines": 66
+        },
+        {
+          "sha": "704e276",
+          "author": "Adelson",
+          "date": "2025-06-17T14:40:22Z",
+          "additions": 26,
+          "deletions": 142,
+          "total_lines": 168
         }
       ],
-      "total_additions": 2419,
-      "total_deletions": 0,
-      "total_lines": 2419
+      "total_additions": 125,
+      "total_deletions": 204,
+      "total_lines": 329
     },
     "avaliacao-desempenho": {
       "commits": [
         {
-          "sha": "45d40c5",
-          "author": "LucasMuniz847",
-          "date": "2025-06-12T13:19:08Z",
-          "additions": 3,
-          "deletions": 3,
-          "total_lines": 6
+          "sha": "68065c3",
+          "author": "Luan Araújo",
+          "date": "2025-06-18T11:58:44Z",
+          "additions": 0,
+          "deletions": 2048,
+          "total_lines": 2048
         },
         {
-          "sha": "34730b9",
-          "author": "Joao Lucas Pedro Muniz da Silva",
-          "date": "2025-06-12T11:58:13Z",
-          "additions": 1136,
-          "deletions": 29,
-          "total_lines": 1165
+          "sha": "14544d4",
+          "author": "Luan Araújo",
+          "date": "2025-06-18T11:58:19Z",
+          "additions": 0,
+          "deletions": 2048,
+          "total_lines": 2048
         },
         {
-          "sha": "e47478b",
-          "author": "Carla Rayanne",
-          "date": "2025-06-10T14:58:45Z",
-          "additions": 39726,
-          "deletions": 0,
-          "total_lines": 39726
+          "sha": "acec6d6",
+          "author": "Luan Araújo",
+          "date": "2025-06-18T11:57:42Z",
+          "additions": 0,
+          "deletions": 2048,
+          "total_lines": 2048
+        },
+        {
+          "sha": "5433cea",
+          "author": "Luan Araújo",
+          "date": "2025-06-18T11:33:42Z",
+          "additions": 608,
+          "deletions": 406,
+          "total_lines": 1014
+        },
+        {
+          "sha": "9c17d26",
+          "author": "Luan Araújo",
+          "date": "2025-06-18T11:33:15Z",
+          "additions": 555,
+          "deletions": 57,
+          "total_lines": 612
         }
       ],
-      "total_additions": 40865,
-      "total_deletions": 32,
-      "total_lines": 40897
+      "total_additions": 1163,
+      "total_deletions": 6607,
+      "total_lines": 7770
     },
     "sim-docs": {
       "commits": [
@@ -413,53 +500,6 @@
       "total_deletions": 63,
       "total_lines": 143
     },
-    "itinerarios": {
-      "commits": [
-        {
-          "sha": "045c7f7",
-          "author": "Luan Araújo",
-          "date": "2025-05-14T15:46:38Z",
-          "additions": 1,
-          "deletions": 1,
-          "total_lines": 2
-        },
-        {
-          "sha": "b82f929",
-          "author": "Luan Araújo",
-          "date": "2025-04-08T12:12:11Z",
-          "additions": 1,
-          "deletions": 1,
-          "total_lines": 2
-        },
-        {
-          "sha": "93fb8e1",
-          "author": "Luan Araújo",
-          "date": "2025-04-08T11:43:17Z",
-          "additions": 523,
-          "deletions": 20178,
-          "total_lines": 20701
-        },
-        {
-          "sha": "25775a1",
-          "author": "Luan Araújo",
-          "date": "2025-04-08T11:41:24Z",
-          "additions": 437,
-          "deletions": 428,
-          "total_lines": 865
-        },
-        {
-          "sha": "b80f4ba",
-          "author": "Luan Araújo",
-          "date": "2025-04-08T11:35:41Z",
-          "additions": 0,
-          "deletions": 16049,
-          "total_lines": 16049
-        }
-      ],
-      "total_additions": 962,
-      "total_deletions": 36657,
-      "total_lines": 37619
-    },
     "permissions-sim": {
       "commits": [
         {
@@ -687,5 +727,5 @@
       "total_lines": 213619
     }
   },
-  "last_updated": "2025-06-15T22:26:32.152871-03:00"
+  "last_updated": "2025-06-22T22:38:24.226910-03:00"
 }
