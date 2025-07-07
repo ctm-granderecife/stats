@@ -2,11 +2,15 @@
   "top_users": [
     {
       "name": "Luan Araújo",
-      "commits": 51
+      "commits": 47
     },
     {
       "name": "Adelson",
       "commits": 8
+    },
+    {
+      "name": "braynerdev",
+      "commits": 4
     },
     {
       "name": "Danilo Torres",
@@ -17,19 +21,15 @@
       "commits": 3
     },
     {
+      "name": "Natalia Bento",
+      "commits": 2
+    },
+    {
       "name": "Julio Cesar Roque da Silva",
       "commits": 2
     },
     {
-      "name": "Natalia Bento",
-      "commits": 1
-    },
-    {
       "name": "Grande Recife - CTM",
-      "commits": 1
-    },
-    {
-      "name": "braynerdev",
       "commits": 1
     },
     {
@@ -38,6 +38,53 @@
     }
   ],
   "repositories": {
+    "itinerarios": {
+      "commits": [
+        {
+          "sha": "8edb5fb",
+          "author": "braynerdev",
+          "date": "2025-07-04T20:14:58Z",
+          "additions": 2,
+          "deletions": 1,
+          "total_lines": 3
+        },
+        {
+          "sha": "9c8c7b1",
+          "author": "braynerdev",
+          "date": "2025-07-04T16:34:02Z",
+          "additions": 29,
+          "deletions": 9,
+          "total_lines": 38
+        },
+        {
+          "sha": "bbfab6e",
+          "author": "Natalia Bento",
+          "date": "2025-07-04T15:08:42Z",
+          "additions": 56,
+          "deletions": 0,
+          "total_lines": 56
+        },
+        {
+          "sha": "656211e",
+          "author": "braynerdev",
+          "date": "2025-07-04T13:09:27Z",
+          "additions": 1,
+          "deletions": 0,
+          "total_lines": 1
+        },
+        {
+          "sha": "9692231",
+          "author": "braynerdev",
+          "date": "2025-07-04T12:21:41Z",
+          "additions": 20,
+          "deletions": 25,
+          "total_lines": 45
+        }
+      ],
+      "total_additions": 108,
+      "total_deletions": 35,
+      "total_lines": 143
+    },
     "pmv-django": {
       "commits": [
         {
@@ -272,53 +319,6 @@
       "total_additions": 70,
       "total_deletions": 16,
       "total_lines": 86
-    },
-    "itinerarios": {
-      "commits": [
-        {
-          "sha": "b3bf642",
-          "author": "braynerdev",
-          "date": "2025-06-20T13:29:52Z",
-          "additions": 1179,
-          "deletions": 549,
-          "total_lines": 1728
-        },
-        {
-          "sha": "045c7f7",
-          "author": "Luan Araújo",
-          "date": "2025-05-14T15:46:38Z",
-          "additions": 1,
-          "deletions": 1,
-          "total_lines": 2
-        },
-        {
-          "sha": "b82f929",
-          "author": "Luan Araújo",
-          "date": "2025-04-08T12:12:11Z",
-          "additions": 1,
-          "deletions": 1,
-          "total_lines": 2
-        },
-        {
-          "sha": "93fb8e1",
-          "author": "Luan Araújo",
-          "date": "2025-04-08T11:43:17Z",
-          "additions": 523,
-          "deletions": 20178,
-          "total_lines": 20701
-        },
-        {
-          "sha": "25775a1",
-          "author": "Luan Araújo",
-          "date": "2025-04-08T11:41:24Z",
-          "additions": 437,
-          "deletions": 428,
-          "total_lines": 865
-        }
-      ],
-      "total_additions": 2141,
-      "total_deletions": 21157,
-      "total_lines": 23298
     },
     "avaliacao-desempenho": {
       "commits": [
@@ -727,5 +727,5 @@
       "total_lines": 213619
     }
   },
-  "last_updated": "2025-06-29T22:38:22.002424-03:00"
+  "last_updated": "2025-07-06T22:38:38.001341-03:00"
 }
