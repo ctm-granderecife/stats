@@ -2,7 +2,7 @@
   "top_users": [
     {
       "name": "Luan Araújo",
-      "commits": 50
+      "commits": 54
     },
     {
       "name": "braynerdev",
@@ -10,15 +10,15 @@
     },
     {
       "name": "4stuno",
-      "commits": 6
-    },
-    {
-      "name": "4stun0",
-      "commits": 5
+      "commits": 10
     },
     {
       "name": "Adelson",
       "commits": 4
+    },
+    {
+      "name": "4stun0",
+      "commits": 3
     },
     {
       "name": "Grande Recife - CTM",
@@ -31,15 +31,113 @@
     {
       "name": "Natalia Bento",
       "commits": 1
-    },
-    {
-      "name": "Thiago Mariano",
-      "commits": 1
     }
   ],
   "repositories": {
+    "reunioes-app-v2": {
+      "commits": [
+        {
+          "sha": "ec4685c",
+          "author": "Luan Araújo",
+          "date": "2025-08-01T23:30:10Z",
+          "additions": 1,
+          "deletions": 3,
+          "total_lines": 4
+        },
+        {
+          "sha": "3f91193",
+          "author": "Luan Araújo",
+          "date": "2025-08-01T22:00:43Z",
+          "additions": 39720,
+          "deletions": 17,
+          "total_lines": 39737
+        },
+        {
+          "sha": "7dee833",
+          "author": "Luan Araújo",
+          "date": "2025-08-01T21:14:49Z",
+          "additions": 1,
+          "deletions": 1,
+          "total_lines": 2
+        },
+        {
+          "sha": "d80b132",
+          "author": "Luan Araújo",
+          "date": "2025-08-01T21:09:02Z",
+          "additions": 132,
+          "deletions": 3,
+          "total_lines": 135
+        },
+        {
+          "sha": "d1e321d",
+          "author": "Luan Araújo",
+          "date": "2025-08-01T21:07:53Z",
+          "additions": 3,
+          "deletions": 2,
+          "total_lines": 5
+        }
+      ],
+      "total_additions": 39857,
+      "total_deletions": 26,
+      "total_lines": 39883
+    },
+    "api-resources-notification": {
+      "commits": [
+        {
+          "sha": "7ebb6d3",
+          "author": "4stuno",
+          "date": "2025-07-29T14:28:00Z",
+          "additions": 1966,
+          "deletions": 154,
+          "total_lines": 2120
+        },
+        {
+          "sha": "20f97f2",
+          "author": "4stuno",
+          "date": "2025-07-29T14:27:51Z",
+          "additions": 1,
+          "deletions": 0,
+          "total_lines": 1
+        },
+        {
+          "sha": "854d17f",
+          "author": "4stuno",
+          "date": "2025-07-29T14:23:38Z",
+          "additions": 1,
+          "deletions": 1,
+          "total_lines": 2
+        },
+        {
+          "sha": "36aff28",
+          "author": "4stuno",
+          "date": "2025-07-29T14:22:41Z",
+          "additions": 425,
+          "deletions": 1,
+          "total_lines": 426
+        },
+        {
+          "sha": "9d7cbc8",
+          "author": "4stun0",
+          "date": "2025-07-29T14:20:52Z",
+          "additions": 1,
+          "deletions": 1,
+          "total_lines": 2
+        }
+      ],
+      "total_additions": 2394,
+      "total_deletions": 157,
+      "total_lines": 2551
+    },
     "itinerarios": {
       "commits": [
+        {
+          "sha": "ce9b0d2",
+          "author": "braynerdev",
+          "date": "2025-07-28T20:00:17Z",
+          "additions": 11,
+          "deletions": 12,
+          "total_lines": 23
+        },
         {
           "sha": "cde0674",
           "author": "braynerdev",
@@ -71,19 +169,11 @@
           "additions": 8,
           "deletions": 9,
           "total_lines": 17
-        },
-        {
-          "sha": "1f53c4f",
-          "author": "braynerdev",
-          "date": "2025-07-07T12:34:19Z",
-          "additions": 2,
-          "deletions": 2,
-          "total_lines": 4
         }
       ],
-      "total_additions": 1295,
-      "total_deletions": 659,
-      "total_lines": 1954
+      "total_additions": 1304,
+      "total_deletions": 669,
+      "total_lines": 1973
     },
     "permissions-sim": {
       "commits": [
@@ -178,37 +268,6 @@
       "total_additions": 1809,
       "total_deletions": 66,
       "total_lines": 1875
-    },
-    "api-resources-notification": {
-      "commits": [
-        {
-          "sha": "6715e4f",
-          "author": "4stun0",
-          "date": "2025-07-22T19:38:14Z",
-          "additions": 1233,
-          "deletions": 0,
-          "total_lines": 1233
-        },
-        {
-          "sha": "4bc8023",
-          "author": "4stun0",
-          "date": "2025-07-22T19:36:46Z",
-          "additions": 1233,
-          "deletions": 0,
-          "total_lines": 1233
-        },
-        {
-          "sha": "8274512",
-          "author": "4stun0",
-          "date": "2025-07-22T19:35:53Z",
-          "additions": 0,
-          "deletions": 0,
-          "total_lines": 0
-        }
-      ],
-      "total_additions": 2466,
-      "total_deletions": 0,
-      "total_lines": 2466
     },
     "busplus-migration": {
       "commits": [
@@ -803,30 +862,7 @@
       "total_additions": 80,
       "total_deletions": 63,
       "total_lines": 143
-    },
-    "glpi": {
-      "commits": [
-        {
-          "sha": "6f46693",
-          "author": "Luan Araújo",
-          "date": "2025-05-07T17:33:15Z",
-          "additions": 1,
-          "deletions": 1,
-          "total_lines": 2
-        },
-        {
-          "sha": "45d3d44",
-          "author": "Thiago Mariano",
-          "date": "2025-05-07T14:46:01Z",
-          "additions": 4755554,
-          "deletions": 0,
-          "total_lines": 4755554
-        }
-      ],
-      "total_additions": 4755555,
-      "total_deletions": 1,
-      "total_lines": 4755556
     }
   },
-  "last_updated": "2025-07-27T22:44:34.861826-03:00"
+  "last_updated": "2025-08-03T22:48:06.071763-03:00"
 }
