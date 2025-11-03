@@ -25,6 +25,10 @@
       "commits": 5
     },
     {
+      "name": "calexmatrix",
+      "commits": 3
+    },
+    {
       "name": "DeOliveira07",
       "commits": 2
     },
@@ -33,17 +37,99 @@
       "commits": 2
     },
     {
-      "name": "calexmatrix",
-      "commits": 1
-    },
-    {
       "name": "4stuno",
       "commits": 1
     }
   ],
   "repositories": {
+    "Documentacao_BI": {
+      "commits": [
+        {
+          "sha": "c38e8aa",
+          "author": "calexmatrix",
+          "date": "2025-10-30T17:52:35Z",
+          "additions": 392,
+          "deletions": 0,
+          "total_lines": 392
+        },
+        {
+          "sha": "c6c0b7a",
+          "author": "calexmatrix",
+          "date": "2025-10-30T17:40:44Z",
+          "additions": 1012,
+          "deletions": 0,
+          "total_lines": 1012
+        },
+        {
+          "sha": "0eedd3f",
+          "author": "calexmatrix",
+          "date": "2025-10-20T19:12:46Z",
+          "additions": 997,
+          "deletions": 0,
+          "total_lines": 997
+        }
+      ],
+      "total_additions": 2401,
+      "total_deletions": 0,
+      "total_lines": 2401
+    },
+    "atendimento_digital": {
+      "commits": [
+        {
+          "sha": "f915a84",
+          "author": "braynerdev",
+          "date": "2025-10-30T12:39:00Z",
+          "additions": 2,
+          "deletions": 1,
+          "total_lines": 3
+        },
+        {
+          "sha": "d28bf1b",
+          "author": "braynerdev",
+          "date": "2025-10-30T12:32:19Z",
+          "additions": 1,
+          "deletions": 1,
+          "total_lines": 2
+        },
+        {
+          "sha": "710f136",
+          "author": "braynerdev",
+          "date": "2025-10-16T12:37:29Z",
+          "additions": 11,
+          "deletions": 3,
+          "total_lines": 14
+        },
+        {
+          "sha": "2425dd2",
+          "author": "braynerdev",
+          "date": "2025-10-03T18:34:03Z",
+          "additions": 5,
+          "deletions": 5,
+          "total_lines": 10
+        },
+        {
+          "sha": "4f09bca",
+          "author": "braynerdev",
+          "date": "2025-10-01T14:52:31Z",
+          "additions": 39,
+          "deletions": 160,
+          "total_lines": 199
+        }
+      ],
+      "total_additions": 58,
+      "total_deletions": 170,
+      "total_lines": 228
+    },
     "itinerarios": {
       "commits": [
+        {
+          "sha": "8ff0771",
+          "author": "braynerdev",
+          "date": "2025-10-28T14:08:34Z",
+          "additions": 6,
+          "deletions": 6,
+          "total_lines": 12
+        },
         {
           "sha": "354dadc",
           "author": "braynerdev",
@@ -75,19 +161,58 @@
           "additions": 49,
           "deletions": 17,
           "total_lines": 66
-        },
-        {
-          "sha": "c7d0953",
-          "author": "braynerdev",
-          "date": "2025-10-23T13:35:11Z",
-          "additions": 73,
-          "deletions": 4,
-          "total_lines": 77
         }
       ],
-      "total_additions": 750,
-      "total_deletions": 407,
-      "total_lines": 1157
+      "total_additions": 683,
+      "total_deletions": 409,
+      "total_lines": 1092
+    },
+    "gtfs": {
+      "commits": [
+        {
+          "sha": "5e59a13",
+          "author": "Adelson",
+          "date": "2025-10-28T12:44:38Z",
+          "additions": 1,
+          "deletions": 1,
+          "total_lines": 2
+        },
+        {
+          "sha": "e991b9e",
+          "author": "Adelson",
+          "date": "2025-10-21T14:16:54Z",
+          "additions": 5,
+          "deletions": 3,
+          "total_lines": 8
+        },
+        {
+          "sha": "f1dcce6",
+          "author": "Adelson",
+          "date": "2025-10-17T18:10:49Z",
+          "additions": 2,
+          "deletions": 2,
+          "total_lines": 4
+        },
+        {
+          "sha": "db48100",
+          "author": "Adelson",
+          "date": "2025-10-17T12:38:01Z",
+          "additions": 1,
+          "deletions": 1,
+          "total_lines": 2
+        },
+        {
+          "sha": "a4ed4e1",
+          "author": "Adelson",
+          "date": "2025-10-16T15:35:28Z",
+          "additions": 80,
+          "deletions": 6,
+          "total_lines": 86
+        }
+      ],
+      "total_additions": 89,
+      "total_deletions": 13,
+      "total_lines": 102
     },
     "bilhetagem": {
       "commits": [
@@ -135,68 +260,6 @@
       "total_additions": 7419,
       "total_deletions": 5,
       "total_lines": 7424
-    },
-    "gtfs": {
-      "commits": [
-        {
-          "sha": "e991b9e",
-          "author": "Adelson",
-          "date": "2025-10-21T14:16:54Z",
-          "additions": 5,
-          "deletions": 3,
-          "total_lines": 8
-        },
-        {
-          "sha": "f1dcce6",
-          "author": "Adelson",
-          "date": "2025-10-17T18:10:49Z",
-          "additions": 2,
-          "deletions": 2,
-          "total_lines": 4
-        },
-        {
-          "sha": "db48100",
-          "author": "Adelson",
-          "date": "2025-10-17T12:38:01Z",
-          "additions": 1,
-          "deletions": 1,
-          "total_lines": 2
-        },
-        {
-          "sha": "a4ed4e1",
-          "author": "Adelson",
-          "date": "2025-10-16T15:35:28Z",
-          "additions": 80,
-          "deletions": 6,
-          "total_lines": 86
-        },
-        {
-          "sha": "78119c1",
-          "author": "Adelson",
-          "date": "2025-10-15T16:56:41Z",
-          "additions": 145,
-          "deletions": 22,
-          "total_lines": 167
-        }
-      ],
-      "total_additions": 233,
-      "total_deletions": 34,
-      "total_lines": 267
-    },
-    "Documentacao_BI": {
-      "commits": [
-        {
-          "sha": "0eedd3f",
-          "author": "calexmatrix",
-          "date": "2025-10-20T19:12:46Z",
-          "additions": 997,
-          "deletions": 0,
-          "total_lines": 997
-        }
-      ],
-      "total_additions": 997,
-      "total_deletions": 0,
-      "total_lines": 997
     },
     "api-resources-gmon": {
       "commits": [
@@ -345,53 +408,6 @@
       "total_additions": 12,
       "total_deletions": 14,
       "total_lines": 26
-    },
-    "atendimento_digital": {
-      "commits": [
-        {
-          "sha": "710f136",
-          "author": "braynerdev",
-          "date": "2025-10-16T12:37:29Z",
-          "additions": 11,
-          "deletions": 3,
-          "total_lines": 14
-        },
-        {
-          "sha": "2425dd2",
-          "author": "braynerdev",
-          "date": "2025-10-03T18:34:03Z",
-          "additions": 5,
-          "deletions": 5,
-          "total_lines": 10
-        },
-        {
-          "sha": "4f09bca",
-          "author": "braynerdev",
-          "date": "2025-10-01T14:52:31Z",
-          "additions": 39,
-          "deletions": 160,
-          "total_lines": 199
-        },
-        {
-          "sha": "974971c",
-          "author": "braynerdev",
-          "date": "2025-09-15T16:11:45Z",
-          "additions": 281,
-          "deletions": 459,
-          "total_lines": 740
-        },
-        {
-          "sha": "9a7a43e",
-          "author": "braynerdev",
-          "date": "2025-08-13T18:54:21Z",
-          "additions": 1521,
-          "deletions": 694,
-          "total_lines": 2215
-        }
-      ],
-      "total_additions": 1857,
-      "total_deletions": 1321,
-      "total_lines": 3178
     },
     "reunioes-app-v2": {
       "commits": [
@@ -832,5 +848,5 @@
       "total_lines": 1149
     }
   },
-  "last_updated": "2025-10-26T22:26:00.601202-03:00"
+  "last_updated": "2025-11-02T22:23:51.087128-03:00"
 }
